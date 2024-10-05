@@ -37,8 +37,9 @@ const PreviewCard = ({ data, setState}: Props) => {
                     </div>
                     <div className={styles.containerImage}>
                         <Image 
-                            layout="fill"
-                            objectFit="cover"
+                            width={100}
+                            height={100}
+                            layout="responsive"
                             className={styles.flexImage} 
                             src={data.images.main.url} 
                             alt=""
