@@ -11,7 +11,7 @@ type Props = {
 
 const DefaultLink = forwardRef<HTMLAnchorElement, Props>(({className, href, target, rel, children, ...rest}, ref) => {
     return (
-        <Link ref={ref} target={target} rel={rel} className={styles.link} href={`${href}`.toString()} {...rest}>{children}</Link>
+        <Link ref={ref} target={target} rel={rel} className={`${styles.link} ${className}`} href={`${href}`.toString()} {...rest}>{children}</Link>
     )
 })
 

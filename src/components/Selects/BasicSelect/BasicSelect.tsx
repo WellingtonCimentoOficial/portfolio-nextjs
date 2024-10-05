@@ -20,7 +20,9 @@ const BasicSelect = ({data, current, useLink, setState}: Props) => {
     const { projectPath } = usePath()
     
     const handleClick = (item: DefaultSelectType) => {
-        setState && setState(item)
+        if(setState){
+            setState(item)
+        }
         setShow(false)
     }
 
