@@ -1,0 +1,43 @@
+@keyframes effect {
+    0% {
+        fill: #91014231;
+        transform: scale(1);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        fill: #910142;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes containerBlurEffect {
+    0% {
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        backdrop-filter: blur(5px);
+    }
+}
+
+.container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 100;
+    animation: containerBlurEffect 0.3s ease-in-out forwards;
+}
+
+.icon {
+    fill: white;
+    width: 100px;
+    animation: effect 2s infinite ease-in-out;
+    animation-direction: alternate;
+}

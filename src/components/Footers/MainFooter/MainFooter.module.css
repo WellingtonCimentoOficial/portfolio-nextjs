@@ -1,0 +1,74 @@
+.wrapper {
+    background-color: white;
+    width: 100vw;
+    -webkit-box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.10);
+    -moz-box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.10);
+    box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.10);
+}
+.container {
+    color: white;
+    padding: 30px 0px;
+    background-color: transparent;
+}
+.header {
+
+}
+.headerLogoTitle {
+    text-decoration: none;
+}
+.body {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+.sectionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sectionContainerHeader {
+    
+}
+.title {
+    font-size: 1.3rem;
+}
+.sectionContainerBody {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sectionContainerBody li {
+
+}
+.sectionContainerBody li a {
+    text-decoration: none;
+}
+.sectionContainerBody li a:hover {
+    text-decoration: underline;
+}
+.containerTwo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.sectionContainerSocialMediaBody {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+.mediaIcon {
+    width: 30px;
+}
+
+@media (max-width: 500px) {
+    .body {
+        background-color: transparent;
+    }
+}

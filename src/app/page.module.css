@@ -1,0 +1,137 @@
+.wrapper {
+    background-color: transparent;
+}
+.containerMainSection {
+}
+.containerOne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0px;
+    flex-wrap: wrap-reverse;
+    gap: 20px;
+}
+.containerOneItem {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.containerOneItemTitleOne {
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+.containerOneItemTitleOne::first-letter {
+    font-size: 3rem;
+}
+.containerOneItemTitleOne::last-letter{
+    font-size: 3rem;
+}
+.containerOneItemTitleTwo {
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+.containerOneItemText {
+    font-size: 1rem;
+}
+.containerOneItemButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.containerOneimage {
+    max-width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* -webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.2); */
+}
+.containerOneImageImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.containerSection {
+    padding: 30px 0px;
+}
+.containerSectionBody {
+    padding: 60px 0px;
+    background-color: transparent;
+}
+.containerSoftSkillsBody {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 10px;
+}
+.containerSoftSkillsBodyItem {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.containerTechStackBody {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.containerTechStackBodyItem {
+    flex: 1;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerTechStackBodyItemImage {
+    width: 45px;
+    height: 45px;
+}
+.containerContactBody {
+    width: 800px;
+    margin: auto;
+}
+.containerProjectsBody {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+@media (max-width: 1100px) {
+    .containerOneItem {
+        width: 100%;
+    }
+    .containerOne {
+        justify-content: center;
+        padding-top: 0;
+    }
+    .containerOneimage {
+        max-width: 50%;
+    }
+}
+@media (max-width: 900px) {
+    .containerContactBody {
+        width: 100%;
+    }
+    .containerOneimage {
+        max-width: 70%;
+    }
+    
+}
+@media (max-width: 600px) {
+    .containerOneimage {
+        max-width: 100%;
+        width: 100%;
+    }
+}
