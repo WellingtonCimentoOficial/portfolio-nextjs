@@ -10,7 +10,8 @@ import React from 'react'
 import { FaGithub } from 'react-icons/fa6'
 import styles from './page.module.css'
 import { Metadata } from 'next'
-import { useRequests } from '@/hooks/useRequests'
+import { ProjectType } from '@/types/projectType'
+import { getProject, getProjects } from '@/utils/requests'
 
 type Props = {
     params: {
@@ -20,8 +21,7 @@ type Props = {
 }
 
 export const generateMetadata = async ({params} : Props): Promise<Metadata> => {
-    const { getProject } = useRequests()
-    const currentProject = await getProject({id: params.id, projectName: params.projectName})
+    const currentProject: ProjectType = await getProject({id: params.id, projectName: params.projectName})
     const images: string[] = currentProject.images.others.map(image => image.url)
     return {
         title: currentProject?.title ?? 'Projeto',
@@ -33,8 +33,6 @@ export const generateMetadata = async ({params} : Props): Promise<Metadata> => {
 }
 
 const ProjectPage = async ({params}: Props) => {
-    const { getProject, getProjects } = useRequests()
-
     const projectsData = await getProjects()
     const currentProjectdata = await getProject({id: params.id, projectName: params.projectName})
 

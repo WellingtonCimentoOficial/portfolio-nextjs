@@ -6,7 +6,7 @@ import MainButton from '../../Buttons/MainButton/MainButton'
 import { LoadingContext } from '../../../contexts/LoadingContext'
 import { useRecaptcha } from '../../../hooks/useRecaptcha'
 import IconToast, { IconToastType } from '../../Toasts/IconToast/IconToast'
-import { useRequests } from '@/hooks/useRequests'
+import { BASE_URL } from '@/utils/requests'
 
 const ContactForm = () => {
     const [firstName, setFirstName] = useState<string>('')
@@ -19,7 +19,6 @@ const ContactForm = () => {
     const updatedStateValuesRef = useRef<{firstName: string, lastName: string, email: string, message: string}>({ firstName: '', lastName: '', email: '', message: ''})
     const [hasRecaptchaError, setHasRecaptchaError] = useState<boolean>(false)
     const [toastMessage, setToastMessage] = useState<IconToastType>({title: '', message: ''})
-    const { BASE_URL } = useRequests()
 
     const handleSendEmail = useCallback(async (token: string) => {
         try {

@@ -1,5 +1,5 @@
 import { projectData } from "@/datas/projectsData";
-import { useSlug } from "@/hooks/useSlug";
+import { slugify } from "@/utils/slugify";
 import { NextResponse } from "next/server";
 
 type Props = {
@@ -11,7 +11,6 @@ type Props = {
 
 export async function GET(request: Request, context: Props) {
     const { params } = context
-    const {slugify} = useSlug()
     const project = projectData.find(project => project.id.toString() === params.id && slugify(project.title) === params.projectName)
 
     if(!project){

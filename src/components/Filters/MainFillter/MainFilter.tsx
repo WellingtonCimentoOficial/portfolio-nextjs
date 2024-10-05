@@ -7,9 +7,9 @@ import BasicSelect, { DefaultSelectType } from '@/components/Selects/BasicSelect
 import InlineSelect from '@/components/Selects/InlineSelect/InlineSelect'
 import { ProjectType } from '@/types/projectType'
 import { LoadingContext } from '@/contexts/LoadingContext'
-import { useRequests } from '@/hooks/useRequests'
 import PreviewCard from '@/components/Cards/PreviewCard/PreviewCard'
 import ProjectModal from '@/components/Modals/ProjectModal/ProjectModal'
+import { getProjects } from '@/utils/requests';
 
 const MainFilter = () => {
     const projectsSection: {title: string, description: string} = {
@@ -37,7 +37,6 @@ const MainFilter = () => {
     const [filterTwo, setFilterTwo] = useState<DefaultSelectType | null>(selectDataTwo[0])
     const [filterThree, setFilterThree] = useState<DefaultSelectType | null>(selectDataThree[0])
     const { setIsLoading } = useContext(LoadingContext)
-    const {getProjects} = useRequests()
     const [originalData, setOriginalData] = useState<ProjectType[]>([])
 
     const handleModal = (data: ProjectType) => {
