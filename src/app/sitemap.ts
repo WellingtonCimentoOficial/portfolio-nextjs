@@ -1,46 +1,20 @@
-import { BASE_URL } from '@/utils/requests';
+import { BASE_URL, getProjects } from '@/utils/requests';
+import { slugify } from '@/utils/slugify';
 import { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    return [
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    const projects = await getProjects()
+
+    const projectsEntries: MetadataRoute.Sitemap = projects.map(project => ({
+        url: BASE_URL + `/projects/${project.id}/${slugify(project.title)}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 1
+    }))
+
+    const sitemapEntries: MetadataRoute.Sitemap = [
         {
             url: BASE_URL + '/',
-            lastModified: new Date(),
-            changeFrequency: 'always',
-            priority: 1
-        },
-        {
-            url: BASE_URL + '/projects/0/ecmarket',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 1
-        },
-        {
-            url: BASE_URL + '/projects/1/smart-lamp-controller',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5
-        },
-        {
-            url: BASE_URL + '/projects/2/magic-led-v2',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5
-        },
-        {
-            url: BASE_URL + '/projects/3/flask_project01',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5
-        },
-        {
-            url: BASE_URL + '/projects/4/u3a-bot',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.5
-        },
-        {
-            url: BASE_URL + '/projects/5/glozble',
             lastModified: new Date(),
             changeFrequency: 'always',
             priority: 1
@@ -57,5 +31,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.5
         },
+        ...projectsEntries,
     ]
+
+    return sitemapEntries
 }
