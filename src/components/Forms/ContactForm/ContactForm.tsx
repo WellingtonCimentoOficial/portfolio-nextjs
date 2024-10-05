@@ -28,7 +28,7 @@ const ContactForm = () => {
                 /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(updatedStateValuesRef.current.email) && 
                 updatedStateValuesRef.current.message.length > 10
             ){
-                const response = await fetch(BASE_URL + '/api/emails/send', {
+                const response = await fetch('/api/emails/send', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
