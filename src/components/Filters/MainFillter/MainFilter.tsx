@@ -65,7 +65,7 @@ const MainFilter = () => {
             setOriginalData(data)
         }
         setIsLoading(false)
-    }, [setIsLoading, setProjects, setOriginalData, getProjects])
+    }, [setIsLoading, setProjects, setOriginalData])
  
     useEffect(() => {handleGetData()}, [handleGetData])
 
