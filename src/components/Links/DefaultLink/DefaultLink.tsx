@@ -15,4 +15,6 @@ const DefaultLink = forwardRef<HTMLAnchorElement, Props>(({className, href, targ
     )
 })
 
+DefaultLink.displayName = "DefaultLink"
+
 export default DefaultLink

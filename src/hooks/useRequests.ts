@@ -13,7 +13,7 @@ export const useRequests = () => {
             return projectsData
         } finally {
         }
-    }, [])
+    }, [BASE_URL])
 
     const getProject = async ({id, projectName} : {id: string, projectName: string}) => {
         try {
