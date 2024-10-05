@@ -9,11 +9,10 @@ type ThumbnailBarPositionType = 'vertical'|'horizontal'
 type Props = {
     mainData: ProjectImageType
     data: ProjectImageType[]
-    maxHeight?: number
     thumbnailBarPosition?: ThumbnailBarPositionType
 }
 
-const GlideCarousel = ({mainData, data, maxHeight, thumbnailBarPosition='horizontal'}: Props) => {
+const GlideCarousel = ({mainData, data, thumbnailBarPosition='horizontal'}: Props) => {
     const [mainImage, setMainImage] = useState<ProjectImageType>(mainData)
     const [thumbnailBarPositionState, setThumbnailBarPositionState] = useState<ThumbnailBarPositionType>(thumbnailBarPosition)
     const thumbsRef = useRef<{id: string, element: HTMLDivElement}[]>([])

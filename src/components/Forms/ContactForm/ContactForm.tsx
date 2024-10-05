@@ -69,7 +69,7 @@ const ContactForm = () => {
         } finally {
             setIsLoading(false)
         }
-    }, [updatedStateValuesRef, setIsLoading])
+    }, [updatedStateValuesRef, BASE_URL, setIsLoading])
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()

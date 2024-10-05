@@ -1,3 +1,4 @@
+import { useCallback } from "react"
 import { useSlug } from "./useSlug"
 import { ProjectType } from "@/types/projectType"
 
@@ -5,14 +6,14 @@ export const useRequests = () => {
     const {slugify} = useSlug()
     const BASE_URL = process.env.NEXT_PUBLIC_DOMAIN_URL
 
-    const getProjects = async () => {
+    const getProjects = useCallback(async () => {
         try {
             const responseProjects = await fetch(BASE_URL + `/api/projects`)
             const projectsData: ProjectType[] = await responseProjects.json()
             return projectsData
         } finally {
         }
-    }
+    }, [])
 
     const getProject = async ({id, projectName} : {id: string, projectName: string}) => {
         try {
