@@ -13,7 +13,7 @@ const CookiesModal = () => {
             <div className={styles.container}>
                 <div className={styles.flexHeader}>
                     <h2 className={styles.title}>Politica de cookies</h2>
-                    <p className={styles.text}>Este site utiliza cookies para melhorar sua experiência. Ao clicar em "Aceitar", você concorda com os nossos <DefaultLink href='/terms-of-use' target="_blank" rel="noopener noreferrer">Termos de Uso</DefaultLink> e <DefaultLink href='/privacy-policy' target="_blank" rel="noopener noreferrer">Política de Privacidade</DefaultLink>.</p>
+                    <p className={styles.text}>Este site utiliza cookies para melhorar sua experiência. Ao clicar em &quot;Aceitar&quot;, você concorda com os nossos <DefaultLink href='/terms-of-use' target="_blank" rel="noopener noreferrer">Termos de Uso</DefaultLink> e <DefaultLink href='/privacy-policy' target="_blank" rel="noopener noreferrer">Política de Privacidade</DefaultLink>.</p>
                 </div>
                 <div className={styles.flexBody}>
                     <MainButton 
