@@ -4,6 +4,7 @@ import FullLogo from '../../Logos/FullLogo/FullLogo'
 import WidthLayout from '../../../layouts/WidthLayout/WidthLayout'
 import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type Props = {}
 
@@ -172,7 +173,12 @@ const MainFooter = (props: Props) => {
                                     {socialMedias.data.map(media => (
                                         <li key={media.id}>
                                             <Link href={media.path} target='_blank'>
-                                                <img className={styles.mediaIcon} src={media.icon} alt={media.text} />
+                                                <Image 
+                                                    width={30}
+                                                    height={30}
+                                                    src={media.icon} 
+                                                    alt={media.text}
+                                                />
                                             </Link>
                                         </li>
                                     ))}

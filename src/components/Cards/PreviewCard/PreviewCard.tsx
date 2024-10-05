@@ -4,6 +4,7 @@ import { PiHeart } from "react-icons/pi";
 import { SiTypescript, SiJavascript, SiPython, SiHtml5, SiCss3 } from "react-icons/si";
 import { usePath } from "../../../hooks/usePath";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
     data: ProjectType
@@ -35,13 +36,28 @@ const PreviewCard = ({ data, setState}: Props) => {
                         </div>
                     </div>
                     <div className={styles.containerImage}>
-                        <img className={styles.flexImage} src={data.images.main.url} alt="" />
+                        <Image 
+                            width={100}
+                            height={100}
+                            layout="responsive"
+                            objectFit="cover"
+                            className={styles.flexImage} 
+                            src={data.images.main.url} 
+                            alt=""
+                        />
                     </div>
                 </div>
                 <div className={styles.body}>
                     <div className={styles.containerBodyHeader}>
                         <div className={styles.containerLogo}>
-                            <img className={styles.imageLogo} src={data.images.logo.url} alt="" />
+                            <Image 
+                                style={{borderRadius: '100%'}}
+                                height={100}
+                                width={100}
+                                layout="responsive"
+                                src={data.images.logo.url} 
+                                alt=""
+                            />
                         </div>
                         <Link href={projectPath(data.id, data.title)} className={styles.projectTitle}>{title}</Link>
                     </div>

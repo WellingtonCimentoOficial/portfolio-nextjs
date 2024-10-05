@@ -13,8 +13,8 @@ import SimpleCard from '@/components/Cards/SimpleCard/SimpleCard';
 import ContactForm from '@/components/Forms/ContactForm/ContactForm';
 import MainFilter from '@/components/Filters/MainFillter/MainFilter';
 import { Metadata } from 'next';
+import Image from 'next/image';
 
-type Props = {}
 type defaultType = {
     title: string
     description: string
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: "Portfólio de Wellington Cimento, programador especializado em desenvolvimento web com React, TypeScript, Django e PostgreSQL."
 }
 
-const HomePage = (props: Props) => {
+const HomePage = () => {
     const techStackSection: TechStackType = {
         title: "Tech Stack",
         description: "Tecnologias que eu utilizo para construir soluções robustas, escaláveis e inovadoras. A combinação certa de ferramentas do mercado, transformando suas ideias em produtos digitais de alta qualidade.",
@@ -203,7 +203,14 @@ const HomePage = (props: Props) => {
                         </div>
                     </div>
                     <div className={styles.containerOneimage}>
-                        <img className={styles.containerOneImageImg} src="https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677991/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311_xonha4.png" alt="" />
+                        <Image 
+                            width={100}
+                            height={100}
+                            priority
+                            layout='responsive'
+                            src="https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677991/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311_xonha4.png" 
+                            alt=""
+                        />
                     </div>
                 </section>
             </div>
@@ -215,7 +222,12 @@ const HomePage = (props: Props) => {
                     <div className={`${styles.containerSectionBody} ${styles.containerTechStackBody}`}>
                         {techStackSection.data.map(item => (
                             <div key={item.id} className={styles.containerTechStackBodyItem}>
-                                <img className={styles.containerTechStackBodyItemImage} src={item.image} alt={item.description} />
+                                <Image 
+                                    width={45}
+                                    height={45}
+                                    src={item.image} 
+                                    alt={item.description}
+                                />
                             </div>
                         ))}
                     </div>

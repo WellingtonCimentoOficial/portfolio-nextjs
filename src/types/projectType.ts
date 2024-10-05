@@ -3,7 +3,7 @@ type Content = {
     text: string
 }
 
-export type Image = {
+export type ProjectImageType = {
     id: string
     url: string
 }
@@ -21,9 +21,9 @@ export interface ProjectType {
     title: string
     description: string
     images: {
-        logo: Image
-        main: Image
-        others: Image[]
+        logo: ProjectImageType
+        main: ProjectImageType
+        others: ProjectImageType[]
     }
     github: string
     statistics: Statistics

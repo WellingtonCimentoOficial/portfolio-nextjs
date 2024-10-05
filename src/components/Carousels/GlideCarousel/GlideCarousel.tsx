@@ -1,19 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './GlideCarousel.module.css'
-import { Image } from '../../../types/projectType'
+import { ProjectImageType } from '../../../types/projectType'
 import { PiArrowLeft, PiArrowRight } from "react-icons/pi";
+import Image from 'next/image';
 
 type ThumbnailBarPositionType = 'vertical'|'horizontal'
 
 type Props = {
-    mainData: Image
-    data: Image[]
+    mainData: ProjectImageType
+    data: ProjectImageType[]
     maxHeight?: number
     thumbnailBarPosition?: ThumbnailBarPositionType
 }
 
 const GlideCarousel = ({mainData, data, maxHeight, thumbnailBarPosition='horizontal'}: Props) => {
-    const [mainImage, setMainImage] = useState<Image>(mainData)
+    const [mainImage, setMainImage] = useState<ProjectImageType>(mainData)
     const [thumbnailBarPositionState, setThumbnailBarPositionState] = useState<ThumbnailBarPositionType>(thumbnailBarPosition)
     const thumbsRef = useRef<{id: string, element: HTMLDivElement}[]>([])
 
@@ -63,10 +64,11 @@ const GlideCarousel = ({mainData, data, maxHeight, thumbnailBarPosition='horizon
         <div className={styles.wrapper}>
             <div className={`${styles.container} ${thumbnailBarPositionState === 'horizontal' ? styles.thumbnailBarHorizontal : styles.thumbnailBarVertical}`}>
                 <div className={styles.containerMainImage}>
-                    <img 
-                        className={`${styles.mainImage} ${thumbnailBarPositionState === 'horizontal' ? styles.mainImageHorizontal : styles.mainImageVertical}`} 
+                    <Image 
+                        width={100}
+                        height={100}
+                        layout='responsive'
                         src={mainImage.url} 
-                        // style={{maxHeight: `${maxHeight}px` || '500px'}} 
                         alt="" 
                     />
                 </div>
@@ -90,7 +92,13 @@ const GlideCarousel = ({mainData, data, maxHeight, thumbnailBarPosition='horizon
                                 onClick={() => setMainImage(img)}
                             >
                                 {img.id === mainImage.id && <div className={styles.flexOtherImageOver}></div>}
-                                <img className={styles.otherImage} src={img.url} alt="" />
+                                <Image 
+                                    width={100}
+                                    height={100}
+                                    layout='responsive'
+                                    src={img.url} 
+                                    alt=""
+                                />
                             </div>
                         ))}
                     </div>

@@ -64,7 +64,7 @@ const sendEmail = async ({firstName, lastName, email, message, recaptchaToken} :
     return response
 }
 
-export async function POST(request: Request, context: any) {
+export async function POST(request: Request) {
     const {firstName, lastName, email, message, recaptchaToken}: Data = await request.json()
 
     if((firstName && firstName.length > 3) && 
