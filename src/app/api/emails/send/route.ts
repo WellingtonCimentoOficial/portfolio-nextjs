@@ -76,7 +76,7 @@ export async function POST(request: Request) {
         try {
             await sendEmail({firstName, lastName, email, message, recaptchaToken})
             return NextResponse.json(null, { status: 200 })
-        } catch (error) {
+        } catch {
             return NextResponse.json(null, { status: 500 })
         }
     }

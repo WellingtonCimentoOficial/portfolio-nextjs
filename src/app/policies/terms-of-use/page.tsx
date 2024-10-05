@@ -1,8 +1,6 @@
 import React from 'react'
 
-type Props = {}
-
-const TermsOfUsePage = (props: Props) => {
+const TermsOfUsePage = () => {
     return (
         <div>TermsOfUsePage</div>
     )

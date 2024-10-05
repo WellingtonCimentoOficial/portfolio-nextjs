@@ -7,13 +7,12 @@ import WidthLayout from '../../../layouts/WidthLayout/WidthLayout';
 import { usePreventScroll } from '../../../hooks/usePreventScroll';
 import Link from 'next/link';
 
-type Props = {}
 type MenuType = {
     name: string
     href: string
 }
 
-const MainHeader = (props: Props) => {
+const MainHeader = () => {
     const [showMenuMobile, setShowMenuMobile] = useState<boolean>(false)
     const [startShowEffect, setStartShowEffect] = useState<boolean>(false)
     const navigationContainerRef = useRef<HTMLDListElement>(null)

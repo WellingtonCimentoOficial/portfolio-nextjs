@@ -2,9 +2,8 @@ import React from 'react'
 import styles from "./FullLogo.module.css"
 import IconLogo from '../IconLogo/IconLogo'
 
-type Props = {}
 
-const FullLogo = (props: Props) => {
+const FullLogo = () => {
     const name = process.env.NEXT_PUBLIC_NAME
     return (
         <div className={styles.wrapper}>

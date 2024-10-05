@@ -5,7 +5,7 @@ export const usePath = () => {
     const { slugify } = useSlug()
     const projectPath = useCallback((id: number | string, title: string) => {
         return `/projects/${id}/${slugify(title)}`
-    }, [])
+    }, [slugify])
 
     return {projectPath}
 }

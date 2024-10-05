@@ -8,9 +8,7 @@ import { useRecaptcha } from '../../../hooks/useRecaptcha'
 import IconToast, { IconToastType } from '../../Toasts/IconToast/IconToast'
 import { useRequests } from '@/hooks/useRequests'
 
-type Props = {}
-
-const ContactForm = (props: Props) => {
+const ContactForm = () => {
     const [firstName, setFirstName] = useState<string>('')
     const [lastName, setLastName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
@@ -62,7 +60,7 @@ const ContactForm = (props: Props) => {
                     setSuccess(false)
                 }
             }
-        } catch (error) {
+        } catch{
             setToastMessage({
                 title: "Mensagem não enviada",
                 message: "Ocorreu um problema no envio da mensagem"

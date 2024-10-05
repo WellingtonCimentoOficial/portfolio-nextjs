@@ -6,8 +6,6 @@ import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import Image from 'next/image';
 
-type Props = {}
-
 type DataType = {
     id: string
     title: string
@@ -22,7 +20,7 @@ type SocialMediaType = Omit<DataType, 'data'> & {
     data: (DataType['data'][number] & {icon: string})[]
 }
 
-const MainFooter = (props: Props) => {
+const MainFooter = () => {
     const currentYear = new Date().getFullYear()
 
     const data: DataType[] = [

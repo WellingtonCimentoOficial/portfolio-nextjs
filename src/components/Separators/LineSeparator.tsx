@@ -1,9 +1,8 @@
 import React from 'react'
 import styles from './LineSeparator.module.css'
 
-type Props = {}
 
-const LineSeparator = (props: Props) => {
+const LineSeparator = () => {
     return (
         <div className={styles.wrapper}></div>
     )

@@ -1,12 +1,12 @@
+"use client"
+
 import React, { useContext } from 'react'
 import { CookiesContext } from '../../../contexts/CookiesContext'
 import styles from "./CookiesModal.module.css"
 import MainButton from '../../Buttons/MainButton/MainButton'
 import DefaultLink from '../../Links/DefaultLink/DefaultLink'
 
-type Props = {}
-
-const CookiesModal = (props: Props) => {
+const CookiesModal = () => {
     const { setAccepted } = useContext(CookiesContext)
     return (
         <div className={styles.wrapper}>

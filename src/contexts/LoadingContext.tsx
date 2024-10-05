@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import IconLoader from "../components/Loaders/IconLoader/IconLoader";
 
 type LoadingContextType = {
     isLoading: boolean

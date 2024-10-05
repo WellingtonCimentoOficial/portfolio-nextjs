@@ -11,9 +11,7 @@ import { useRequests } from '@/hooks/useRequests'
 import PreviewCard from '@/components/Cards/PreviewCard/PreviewCard'
 import ProjectModal from '@/components/Modals/ProjectModal/ProjectModal'
 
-type Props = {}
-
-const MainFilter = (props: Props) => {
+const MainFilter = () => {
     const projectsSection: {title: string, description: string} = {
         title: "Projetos",
         description: "Uma coleção dos meus projetos pessoais que demonstram minhas habilidades e paixão por desenvolver soluções criativas e funcionais."

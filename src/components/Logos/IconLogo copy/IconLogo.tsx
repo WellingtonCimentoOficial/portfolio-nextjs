@@ -1,8 +1,7 @@
 import React from 'react'
 
-type Props = {}
 
-const IconLogo = (props: Props) => {
+const IconLogo = () => {
 
     const primaryColor = "var(--principal-color)"
 

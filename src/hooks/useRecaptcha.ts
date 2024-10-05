@@ -64,7 +64,7 @@ export const useRecaptcha = () => {
                 await createScriptRecaptcha()
             }
             !hasRendered && await renderRecaptcha({sitekey, container, badge, callback, errorCallback})
-        } catch (error) {
+        } catch{
             // console.error("erooooo")
         }
     }, [ScriptExists, renderRecaptcha, createScriptRecaptcha, hasRendered])

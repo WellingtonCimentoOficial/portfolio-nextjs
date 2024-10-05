@@ -1,8 +1,6 @@
 import React from 'react'
 
-type Props = {}
-
-const PrivacyPolicyPage = (props: Props) => {
+const PrivacyPolicyPage = () => {
     return (
         <div>PrivacyPolicyPage</div>
     )

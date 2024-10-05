@@ -54,7 +54,7 @@ export const CookiesContextProvider = ({children} : CookiesContextProviderProps)
             }else{
                 setAccepted(false)
             }
-        } catch (error) {
+        } catch{
             setAccepted(false)
         }
     }, [])
