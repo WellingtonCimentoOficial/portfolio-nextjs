@@ -93,12 +93,12 @@ const MainFooter = () => {
                 {
                     id: uuidv4(),
                     text: "Termos de Uso",
-                    path: "/terms-of-use"
+                    path: "/policies/terms-of-use"
                 },
                 {
                     id: uuidv4(),
                     text: "Privacidade",
-                    path: "/privacy-policy"
+                    path: "/policies/privacy-policy"
                 },
             ]
         },

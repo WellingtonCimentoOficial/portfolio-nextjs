@@ -11,14 +11,8 @@ type Props = {
 
 const HandlerLayout = ({ pathname, children } : Props) => {
     const { isLoading } = useContext(LoadingContext)
-    if(pathname === '/'){
-        return (
-            <MainLayout>
-                {children}
-                {isLoading && <IconLoader transparency />}
-            </MainLayout>
-        )
-    }else if(pathname.startsWith('/projects')){
+    
+    if(pathname.startsWith('/projects')){
         return (
             <HeaderSideBarFooterLayout>
                 {children}
@@ -27,7 +21,12 @@ const HandlerLayout = ({ pathname, children } : Props) => {
         )
     }
 
-    return children
+    return (
+        <MainLayout>
+            {children}
+            {isLoading && <IconLoader transparency />}
+        </MainLayout>
+    )
 }
 
 export default HandlerLayout
