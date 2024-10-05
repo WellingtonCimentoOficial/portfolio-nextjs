@@ -6,7 +6,6 @@ import MainButton from '../../Buttons/MainButton/MainButton'
 import { LoadingContext } from '../../../contexts/LoadingContext'
 import { useRecaptcha } from '../../../hooks/useRecaptcha'
 import IconToast, { IconToastType } from '../../Toasts/IconToast/IconToast'
-import { BASE_URL } from '@/utils/requests'
 
 const ContactForm = () => {
     const [firstName, setFirstName] = useState<string>('')
