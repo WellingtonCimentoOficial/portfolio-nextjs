@@ -62,13 +62,15 @@ export const useRecaptcha = () => {
         try {
             if(!ScriptExists(src) && sitekey !== ''){
                 await createScriptRecaptcha()
-            }else if(!hasRendered){
+            }else if(isRecaptchaScriptLoaded && !hasRendered){
                 await renderRecaptcha({sitekey, container, badge, callback, errorCallback})
             }
-        } catch{
-            // console.error("erooooo")
+        } catch {
+            if(errorCallback){
+                errorCallback()
+            }
         }
-    }, [ScriptExists, renderRecaptcha, createScriptRecaptcha, hasRendered])
+    }, [ScriptExists, renderRecaptcha, createScriptRecaptcha, hasRendered, isRecaptchaScriptLoaded])
 
     const getRecaptchaToken = useCallback(() => {
         if(window.grecaptcha){
