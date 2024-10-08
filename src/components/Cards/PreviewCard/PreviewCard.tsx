@@ -36,14 +36,14 @@ const PreviewCard = ({ data, setState}: Props) => {
                         </div>
                     </div>
                     <div className={styles.containerImage}>
-                        <Image 
-                            width={100}
-                            height={100}
-                            layout="responsive"
-                            className={styles.flexImage} 
-                            src={data.images.main.url} 
-                            alt=""
-                        />
+                        <div className={styles.flexImage}>
+                            <Image 
+                                style={{objectFit: 'cover'}}
+                                fill
+                                src={data.images.main.url} 
+                                alt=""
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className={styles.body}>
