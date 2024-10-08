@@ -2,6 +2,7 @@ import SubHeading from '@/components/Headings/SubHeading/SubHeading'
 import DefaultItemList from '@/components/Lists/DefaultItemList/DefaultItemList'
 import DefaultList from '@/components/Lists/DefaultList/DefaultList'
 import ContentLayout from '@/layouts/ContentLayout/ContentLayout'
+import { getPageTitle } from '@/utils/getPageTitle'
 import { Metadata } from 'next'
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
@@ -16,10 +17,10 @@ type DataType = {
 }
 
 export const metadata: Metadata =  {
-    title: 'Política de Privacidade',
+    title: getPageTitle('Política de Privacidade'),
     description: 'Nossa Política de Privacidade detalha como coletamos, usamos e protegemos suas informações pessoais, assegurando sua privacidade e segurança.',
     openGraph: {
-        title: 'Política de Privacidade',
+        title: getPageTitle('Política de Privacidade'),
         description: 'Descubra como suas informações são tratadas e protegidas, conforme nossa Política de Privacidade.',
     },
 }

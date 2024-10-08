@@ -12,6 +12,7 @@ import styles from './page.module.css'
 import { Metadata } from 'next'
 import { ProjectType } from '@/types/projectType'
 import { getProject, getProjects } from '@/utils/requests'
+import { getPageTitle } from '@/utils/getPageTitle'
 
 type Props = {
     params: {
@@ -24,7 +25,7 @@ export const generateMetadata = async ({params} : Props): Promise<Metadata> => {
     const currentProject: ProjectType = await getProject({id: params.id, projectName: params.projectName})
     const images: string[] = currentProject.images.others.map(image => image.url)
     return {
-        title: currentProject?.title ?? 'Projeto',
+        title: getPageTitle(currentProject?.title ?? 'Projeto'),
         description: currentProject?.description ?? 'Detalhes sobre o projeto',
         openGraph: {
             images: [currentProject.images.logo, ...images]

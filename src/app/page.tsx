@@ -14,6 +14,7 @@ import ContactForm from '@/components/Forms/ContactForm/ContactForm';
 import MainFilter from '@/components/Filters/MainFillter/MainFilter';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { getPageTitle } from '@/utils/getPageTitle';
 
 type defaultType = {
     title: string
@@ -37,7 +38,7 @@ type SoftSkillsType = defaultType & {
 }
 
 export const metadata: Metadata = {
-    title: "Portfólio",
+    title: getPageTitle(process.env.NEXT_PUBLIC_NAME ?? ''),
     description: "Portfólio de Wellington Cimento, programador especializado em desenvolvimento web com React, TypeScript, Django e PostgreSQL."
 }
 

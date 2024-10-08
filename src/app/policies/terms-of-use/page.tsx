@@ -2,6 +2,7 @@ import SubHeading from '@/components/Headings/SubHeading/SubHeading'
 import DefaultItemList from '@/components/Lists/DefaultItemList/DefaultItemList'
 import DefaultList from '@/components/Lists/DefaultList/DefaultList'
 import ContentLayout from '@/layouts/ContentLayout/ContentLayout'
+import { getPageTitle } from '@/utils/getPageTitle'
 import { Metadata } from 'next'
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
@@ -16,10 +17,10 @@ type DataType = {
 }
 
 export const metadata: Metadata =  {
-    title: 'Termos de Uso',
+    title: getPageTitle('Termos de Uso'),
     description: 'Leia os nossos Termos de Uso para entender os direitos e responsabilidades ao utilizar nosso site, incluindo regras sobre propriedade intelectual e limitações de responsabilidade.',
     openGraph: {
-        title: 'Termos de Uso',
+        title: getPageTitle('Termos de Uso'),
         description: 'Leia os nossos Termos de Uso para entender os direitos e responsabilidades ao utilizar nosso site.',
     },
 }
