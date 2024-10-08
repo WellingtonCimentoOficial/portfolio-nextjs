@@ -74,7 +74,7 @@ const ProjectPage = async ({params}: Props) => {
                                 </>
                             }
 
-                            <SubHeading>Getting Started</SubHeading>
+                            {/* <SubHeading>Getting Started</SubHeading>
                             <DefaultList>
                                 <DefaultItemList>
                                     Super quick — try the <DefaultLink href="/">Quickstart Guide</DefaultLink>.
@@ -103,7 +103,7 @@ const ProjectPage = async ({params}: Props) => {
                                 <DefaultItemList>
                                     <DefaultLink href="/">Improve Your Developer Experience with Spring Boot Dev Services</DefaultLink>
                                 </DefaultItemList>
-                            </DefaultList>
+                            </DefaultList> */}
                         </TextContentArea>
                     </div>
                 </div>
