@@ -63,13 +63,15 @@ const GlideCarousel = ({mainData, data, thumbnailBarPosition='horizontal'}: Prop
         <div className={styles.wrapper}>
             <div className={`${styles.container} ${thumbnailBarPositionState === 'horizontal' ? styles.thumbnailBarHorizontal : styles.thumbnailBarVertical}`}>
                 <div className={styles.containerMainImage}>
-                    <Image 
-                        width={100}
-                        height={100}
-                        layout='responsive'
-                        src={mainImage.url} 
-                        alt="" 
-                    />
+                    <div className={styles.mainImage}>
+                        <Image 
+                            objectFit='contain'
+                            fill
+                            sizes='100%'
+                            src={mainImage.url} 
+                            alt="" 
+                        />
+                    </div>
                 </div>
                 <div className={`${styles.containerOtherImages} ${thumbnailBarPositionState === 'vertical' ? styles.containerOtherImagesVertical : null}`}>
                     <div className={styles.flexController} onClick={() => handleChange("previous")}>
@@ -92,9 +94,9 @@ const GlideCarousel = ({mainData, data, thumbnailBarPosition='horizontal'}: Prop
                             >
                                 {img.id === mainImage.id && <div className={styles.flexOtherImageOver}></div>}
                                 <Image 
-                                    width={100}
-                                    height={100}
-                                    layout='responsive'
+                                    style={{objectFit: 'contain'}}
+                                    fill
+                                    sizes='100%'
                                     src={img.url} 
                                     alt=""
                                 />

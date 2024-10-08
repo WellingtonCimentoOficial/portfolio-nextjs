@@ -203,14 +203,15 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className={styles.containerOneimage}>
-                        <Image 
-                            width={100}
-                            height={100}
-                            priority
-                            layout='responsive'
-                            src="https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677991/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311_xonha4.png" 
-                            alt=""
-                        />
+                        <div className={styles.flexOneImage}>
+                            <Image 
+                                fill
+                                sizes='100%'
+                                priority
+                                src="https://res.cloudinary.com/dmkxkaumk/image/upload/v1726677991/vecteezy_vector-illustration-of-a-person-concept-people-will_5426311_xonha4.png" 
+                                alt=""
+                            />
+                        </div>
                     </div>
                 </section>
             </div>

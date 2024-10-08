@@ -81,9 +81,7 @@
     gap: 10px;
 }
 .containerLogo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     width: 28px;
     height: 28px;
     border-radius: 100%;

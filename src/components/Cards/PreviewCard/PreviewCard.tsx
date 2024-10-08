@@ -40,6 +40,7 @@ const PreviewCard = ({ data, setState}: Props) => {
                             <Image 
                                 style={{objectFit: 'cover'}}
                                 fill
+                                sizes="100%"
                                 src={data.images.main.url} 
                                 alt=""
                             />
@@ -51,9 +52,8 @@ const PreviewCard = ({ data, setState}: Props) => {
                         <div className={styles.containerLogo}>
                             <Image 
                                 style={{borderRadius: '100%'}}
-                                height={100}
-                                width={100}
-                                layout="responsive"
+                                fill
+                                sizes="100%"
                                 src={data.images.logo.url} 
                                 alt=""
                             />
