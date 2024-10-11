@@ -9,7 +9,7 @@ export const useRecaptcha = () => {
 
     const src = 'https://www.google.com/recaptcha/api.js'
 
-    const createScriptRecaptcha = useCallback(() => {
+    const createScriptRecaptcha = useCallback(async () => {
         return new Promise<void>((resolve, reject) => {
             if(!ScriptExists(src)){
                 const script = document.createElement('script')
