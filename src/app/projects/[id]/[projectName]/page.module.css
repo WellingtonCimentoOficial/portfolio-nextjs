@@ -56,6 +56,17 @@
 }
 .body {
 }
+.imagesList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.imagesListLi {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
 
 @media (max-width: 900px){
     .projectsSelect {
