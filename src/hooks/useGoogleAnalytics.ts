@@ -42,7 +42,7 @@ export const useGoogleAnalytics = ({id} : IdType) => {
     }, [src, ScriptExists])
 
     const insertScriptFunctions = useCallback(async ({callback} : CallbackType) => {
-        return new Promise<void>((resolve, _) => {
+        return new Promise<void>((resolve) => {
             const script = document.createElement('script')
             script.textContent = `
                 window.dataLayer = window.dataLayer || [];
