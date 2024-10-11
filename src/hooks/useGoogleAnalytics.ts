@@ -39,10 +39,10 @@ export const useGoogleAnalytics = ({id} : IdType) => {
                 resolve()
             }
         })
-    }, [ScriptExists])
+    }, [src, ScriptExists])
 
     const insertScriptFunctions = useCallback(async ({callback} : CallbackType) => {
-        return new Promise<void>((resolve, reject) => {
+        return new Promise<void>((resolve, _) => {
             const script = document.createElement('script')
             script.textContent = `
                 window.dataLayer = window.dataLayer || [];
