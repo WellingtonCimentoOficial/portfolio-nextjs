@@ -172,6 +172,7 @@ const MainFooter = () => {
                                         <li key={media.id}>
                                             <Link href={media.path} target='_blank'>
                                                 <Image 
+                                                    sizes='100%'
                                                     width={30}
                                                     height={30}
                                                     src={media.icon} 

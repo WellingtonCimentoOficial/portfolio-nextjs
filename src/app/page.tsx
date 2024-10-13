@@ -11,10 +11,10 @@ import MainButton from '@/components/Buttons/MainButton/MainButton';
 import TitleDescLayout from '@/layouts/TitleDescLayout/TitleDescLayout';
 import SimpleCard from '@/components/Cards/SimpleCard/SimpleCard';
 import ContactForm from '@/components/Forms/ContactForm/ContactForm';
-import MainFilter from '@/components/Filters/MainFillter/MainFilter';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { getPageTitle } from '@/utils/getPageTitle';
+import HomePageFragment from '@/fragments/HomePageFragment/HomePageFragment';
 
 type defaultType = {
     title: string
@@ -217,7 +217,7 @@ const HomePage = () => {
                 </section>
             </div>
             <section id='projects' className={`${styles.containerSection} ${styles.containerProjects}`}>
-                <MainFilter />
+                <HomePageFragment />
             </section>
             <section id='techstack' className={`${styles.containerSection} ${styles.containerTechStack}`}>
                 <TitleDescLayout title={techStackSection.title} description={techStackSection.description}>
@@ -225,6 +225,7 @@ const HomePage = () => {
                         {techStackSection.data.map(item => (
                             <div key={item.id} className={styles.containerTechStackBodyItem}>
                                 <Image 
+                                    sizes='100%'
                                     width={45}
                                     height={45}
                                     src={item.image} 

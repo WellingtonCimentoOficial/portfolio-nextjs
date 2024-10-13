@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback, useContext, useState, useEffect } from 'react'
-import styles from './MainFilter.module.css'
+import styles from './HomePageFragment.module.css'
 import TitleDescLayout from '@/layouts/TitleDescLayout/TitleDescLayout'
 import BasicSelect, { DefaultSelectType } from '@/components/Selects/BasicSelect/BasicSelect'
 import InlineSelect from '@/components/Selects/InlineSelect/InlineSelect'
@@ -11,7 +11,7 @@ import PreviewCard from '@/components/Cards/PreviewCard/PreviewCard'
 import ProjectModal from '@/components/Modals/ProjectModal/ProjectModal'
 import { getProjects } from '@/utils/requests';
 
-const MainFilter = () => {
+const HomePageFragment = () => {
     const projectsSection: {title: string, description: string} = {
         title: "Projetos",
         description: "Uma coleção dos meus projetos pessoais que demonstram minhas habilidades e paixão por desenvolver soluções criativas e funcionais."
@@ -116,4 +116,4 @@ const MainFilter = () => {
     )
 }
 
-export default MainFilter
+export default HomePageFragment

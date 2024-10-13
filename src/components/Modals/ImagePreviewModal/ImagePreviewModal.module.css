@@ -1,0 +1,71 @@
+@keyframes showContainer {
+    0% {
+        opacity: 80%;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
+@keyframes showWrapper {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.511);
+    z-index: 98;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: showWrapper 0.3s ease-in-out forwards;
+    user-select: none;
+}
+.container {
+    width: 95%;
+    height: 85%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    animation: showContainer 0.5s ease-in-out forwards;
+    transform-origin: top;
+}
+.flexImage {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.flexController {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    min-height: 35px;
+    border: 2px solid white;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.icon {
+    font-size: 30px;
+    fill: white;
+}
+.closeController {
+    position: absolute;
+    top: -50px;
+    left: calc(50% - (35px / 2));
+}
+.closeIcon {
+    transform: rotate(45deg);
+}

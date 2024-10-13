@@ -13,7 +13,7 @@ import { Metadata } from 'next'
 import { ProjectType } from '@/types/projectType'
 import { getProject, getProjects } from '@/utils/requests'
 import { getPageTitle } from '@/utils/getPageTitle'
-import Image from 'next/image'
+import ProjectsPageFragment from '@/fragments/ProjectsPageFragment/ProjectsPageFragment'
 
 type Props = {
     params: {
@@ -74,21 +74,9 @@ const ProjectPage = async ({params}: Props) => {
                                     </DefaultList>
                                 </>
                             }
-                            <>
-                                <SubHeading>Imagens</SubHeading>
-                                <DefaultParagraph>Nesta seção, você encontrará uma coleção de capturas de tela do meu projeto. As imagens destacam as principais funcionalidades e o design da aplicação, proporcionando uma visão clara de como o projeto opera na prática. Cada screenshot foi cuidadosamente selecionado para ilustrar a experiência do usuário e a interface, permitindo que você compreenda melhor o conceito e a execução do projeto.</DefaultParagraph>
-                                <ul className={styles.imagesList}>
-                                    {currentProjectdata.images.others.map(image => (
-                                        <li key={image.id} className={styles.imagesListLi}>
-                                            <Image 
-                                                fill
-                                                src={image.url}
-                                                alt=''
-                                            />
-                                        </li>
-                                    ))}
-                                </ul>
-                            </>
+                            {currentProjectdata.images.others &&
+                                <ProjectsPageFragment images={currentProjectdata.images.others} />
+                            }
 
                             {/* <SubHeading>Getting Started</SubHeading>
                             <DefaultList>
